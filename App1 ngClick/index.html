@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="clockApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h3>Clock App - time controller</h3>
+<div ng-controller="timeCtrl">
+    <p>Current Time is : {{timestring}}</p>
+    <button ng-click="updatetime()">Update Time</button>
+</div>
+
+<h3>List - list controller</h3>
+<div ng-controller="listCtrl">
+    <ul>
+        <li ng-repeat="x in list1">{{x}}</li>
+    </ul>
+</div>
+
+<h3>Cart App - cart controller</h3>
+<div ng-controller="cartCtrl">
+    <ul>
+        <li ng-repeat="i in products">
+            {{i}}
+            <span ng-click="removeItem($index)">&times;</span>
+        </li>
+    </ul>
+    <input ng-model="addMe">
+    <button ng-click="insertItem()">Add Product</button>
+    <p>
+        {{errortext}}
+    </p>
+</div>
+
+
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script src="app.js"></script>
+</html>
